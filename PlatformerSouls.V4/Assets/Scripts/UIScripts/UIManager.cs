@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
-    public List<GameObject> buttonElements = new List<GameObject>();
+    
     public GameObject background;
 
     void Start()
