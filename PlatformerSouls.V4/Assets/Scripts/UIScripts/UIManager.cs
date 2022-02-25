@@ -17,4 +17,15 @@ public class UIManager : MonoBehaviour
     {
         
     }
+    public void newGame(){
+
+    }
+
+    public void LoadGame(){
+
+    }
+
+    public void openOptions(){
+
+    }
 }
