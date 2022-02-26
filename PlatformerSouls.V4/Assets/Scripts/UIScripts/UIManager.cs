@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class UIManager : MonoBehaviour//also make script for using buttons to click using mouse as well as keys
 {
     public List<GameObject> buttonElements = new List<GameObject>();//use list to 
-    private int index;//used to index button elements to see which button is being selected
+    public int index = 0;//used to index button elements to see which button is being selected
 
     public GameObject background;
     public GameObject pointer;
