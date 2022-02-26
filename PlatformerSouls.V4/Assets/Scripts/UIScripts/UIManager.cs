@@ -10,7 +10,8 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
     private int index;//used to index button elements to see which button is being selected
 
     public GameObject background;
-    public Image pointer;
+    public GameObject pointer;
+    private Image pointerImage;
 
     //use positions to place pointer at their locations in canvas space
     public Vector3 newGamePos = new Vector3(-60, -100, 0);
@@ -19,6 +20,8 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
 
     void Start()
     {
+        pointerImage = pointer.GetComponent<Image>();
+        pointerImage.transform.position = newGamePos;
     }
 
     // Update is called once per frame
@@ -58,29 +61,29 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
     public void incrementIndex(){
         if(index == 2){
             index = 0;
-            pointer.transform.position = newGamePos;
+            pointerImage.transform.position = newGamePos;
         }
         else if(index == 1){
             index++;
-            pointer.transform.position = optionsPos;
+            pointerImage.transform.position = optionsPos;
         }
         else{
             index++;
-            pointer.transform.position = loadGamePos;
+            pointerImage.transform.position = loadGamePos;
         }
     }
     public void decrementIndex(){
         if(index == 0){
             index = 2;
-            pointer.transform.position = optionsPos;
+            pointerImage.transform.position = optionsPos;
         }
         else if(index == 1){
             index--;
-            pointer.transform.position = newGamePos;
+            pointerImage.transform.position = newGamePos;
         }
         else{
             index--;
-            pointer.transform.position = loadGamePos;
+            pointerImage.transform.position = loadGamePos;
         }
     }
 }
