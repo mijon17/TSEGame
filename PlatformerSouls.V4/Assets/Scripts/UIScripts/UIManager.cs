@@ -11,7 +11,8 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
 
     public GameObject background;
     public GameObject pointer;
-    public GameObject canvas;//this should be set to whatever screen resolution is
+    public GameObject mainMenuCanvas;
+    public GameObject optionsCanvas;
     private Image pointerImage;
 
     //use positions to place pointer at their locations in canvas space
@@ -58,6 +59,7 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
 
     public void openOptions(){
         Debug.Log("opening options");
+
     }
 
     public void incrementIndex(){
