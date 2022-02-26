@@ -11,17 +11,19 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
 
     public GameObject background;
     public GameObject pointer;
+    public GameObject canvas;
     private Image pointerImage;
 
     //use positions to place pointer at their locations in canvas space
     public Vector3 newGamePos = new Vector3(-60, -100, 0);
     public Vector3 loadGamePos = new Vector3(-60, -140, 0);
     public Vector3 optionsPos = new Vector3(-60, 180, 0);
+    
 
     void Start()
     {
-        pointerImage = pointer.GetComponent<Image>();
-        pointerImage.transform.position = newGamePos;
+    
+        pointer.transform.localPosition = newGamePos;
     }
 
     // Update is called once per frame
@@ -61,29 +63,29 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
     public void incrementIndex(){
         if(index == 2){
             index = 0;
-            pointerImage.transform.position = newGamePos;
+            pointer.transform.localPosition = newGamePos;
         }
         else if(index == 1){
             index++;
-            pointerImage.transform.position = optionsPos;
+            pointer.transform.localPosition = optionsPos;
         }
         else{
             index++;
-            pointerImage.transform.position = loadGamePos;
+            pointer.transform.localPosition = loadGamePos;
         }
     }
     public void decrementIndex(){
         if(index == 0){
             index = 2;
-            pointerImage.transform.position = optionsPos;
+            pointer.transform.localPosition = optionsPos;
         }
         else if(index == 1){
             index--;
-            pointerImage.transform.position = newGamePos;
+            pointer.transform.localPosition = newGamePos;
         }
         else{
             index--;
-            pointerImage.transform.position = loadGamePos;
+            pointer.transform.localPosition = loadGamePos;
         }
     }
 }
