@@ -15,9 +15,9 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
     private Image pointerImage;
 
     //use positions to place pointer at their locations in canvas space
-    public Vector3 newGamePos = new Vector3(-60, -100, 0);
-    public Vector3 loadGamePos = new Vector3(-60, -140, 0);
-    public Vector3 optionsPos = new Vector3(-60, 180, 0);
+    private Vector3 newGamePos = new Vector3(-60, -100, 0);
+    private Vector3 loadGamePos = new Vector3(-60, -140, 0);
+    private Vector3 optionsPos = new Vector3(-60, -180, 0);
     
 
     void Start()
