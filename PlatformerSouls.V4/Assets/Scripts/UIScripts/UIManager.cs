@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
 
     public GameObject background;
     public GameObject pointer;
-    public GameObject canvas;
+    public GameObject canvas;//this should be set to whatever screen resolution is
     private Image pointerImage;
 
     //use positions to place pointer at their locations in canvas space
@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
 
     void Start()
     {
-    
+        //remember to configure buttons so they do not get distorted with different screen resolutions
         pointer.transform.localPosition = newGamePos;
     }
 
