@@ -6,13 +6,12 @@ using UnityEngine.UIElements;
 //this is predominanently for using keys to interact
 public class UIManager : MonoBehaviour//also make script for using buttons to click using mouse as well as keys
 {
-    public List<GameObject> buttonElements = new List<GameObject>();//use list to 
+    public List<GameObject> mainMenuElements = new List<GameObject>();//use list to 
     public int index = 0;//used to index button elements to see which button is being selected
 
     public GameObject background;
     public GameObject pointer;
-    public GameObject mainMenuCanvas;
-    public GameObject optionsCanvas;
+    public GameObject optionsPanel;
     private Image pointerImage;
 
     //use positions to place pointer at their locations in canvas space
@@ -23,8 +22,8 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
 
     void Start()
     {
-        //remember to configure buttons so they do not get distorted with different screen resolutions
         pointer.transform.localPosition = newGamePos;
+        optionsPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -59,6 +58,10 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
 
     public void openOptions(){
         Debug.Log("opening options");
+        foreach(GameObject obj in mainMenuElements){
+            obj.SetActive(false);
+        }
+        optionsPanel.SetActive(true);
 
     }
 
