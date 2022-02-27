@@ -10,10 +10,15 @@ public class GameSettings : ScriptableObject
 {
     private float volume;
     private int brightness;
+    public AudioMixer mixer;
+    //public Slider volSlider;
     void Start()
     {
         //load preferences from file;
+        //potential bugs could arise if PlayerPrefs file does not exist
+        //volSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f)
     }
+
 
 
 }
