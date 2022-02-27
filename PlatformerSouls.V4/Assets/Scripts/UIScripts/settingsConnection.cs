@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class settingsConnection : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameSettings _settings;
+    [SerializeField]
+    public static GameSettings s;
+    public static settingsConnection instance;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        DontDestroyOnLoad(gameObject);
+        if(settingsConnection.instance == null){
+            settingsConnection.instance = this;
+
+        }
+        if(settingsConnection.s == null){
+            settingsConnection.s = _settings;
+        }
     }
 }
