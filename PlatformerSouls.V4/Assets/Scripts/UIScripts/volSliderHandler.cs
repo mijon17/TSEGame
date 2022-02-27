@@ -11,4 +11,5 @@ public class volSliderHandler : MonoBehaviour
         manager.volume = sliderValue;
         mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
     }
+
 }

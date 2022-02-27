@@ -9,6 +9,7 @@ public class optionsManager : MonoBehaviour
     public UIManager mainMenuManager;
     public GameObject optionsPanel;
     public AudioMixer mixer;
+    public GameObject volSlider;
     public float volume;
     //may need reference to slider value to ensure th
     //private int brightness
@@ -33,12 +34,9 @@ public class optionsManager : MonoBehaviour
     }
     public void apply(){
         //save system preferences
-        SetVolume(volume);//set to slider value
     }
     public void SetVolume(float sliderValue)
     {
-        Debug.Log(sliderValue);
-        mixer.SetFloat("MusicVol", Mathf.Log10(sliderValue) * 20);
-        PlayerPrefs.SetFloat("MusicVolume", sliderValue);
+        
     }
 }
