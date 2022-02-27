@@ -30,7 +30,7 @@ public class buttonMouseHandler : MonoBehaviour
     public void loadGame(){
         manager.LoadGame();
     }
-    public void options(){
-        manager.openOptions();
+    public void quit(){
+        manager.quitGame();
     }
 }

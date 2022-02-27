@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
     //use positions to place pointer at their locations in canvas space
     private Vector3 newGamePos = new Vector3(-60, -100, 0);
     private Vector3 loadGamePos = new Vector3(-60, -140, 0);
-    private Vector3 optionsPos = new Vector3(-60, -180, 0);
+    private Vector3 quitPos = new Vector3(-60, -180, 0);
     
 
     void Start()
@@ -38,8 +38,9 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
                 LoadGame();
             }
             else if(index == 2){
-                openOptions();
+                quitGame();
             }
+            //in case optiosn return
         }
         if(Input.GetKeyDown(KeyCode.DownArrow)){
             incrementIndex();
@@ -55,15 +56,20 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
     public void LoadGame(){
         Debug.Log("loading game");
     }
+    public void quitGame(){
+        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+    }
 
-    public void openOptions(){
+    //might need someoneelse to do
+/*    public void openOptions(){
         Debug.Log("opening options");
         foreach(GameObject obj in mainMenuElements){
             obj.SetActive(false);
         }
         optionsPanel.SetActive(true);
 
-    }
+    }*/
 
     public void incrementIndex(){
         if(index == 2){
@@ -72,7 +78,7 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
         }
         else if(index == 1){
             index++;
-            pointer.transform.localPosition = optionsPos;
+            pointer.transform.localPosition = quitPos;
         }
         else{
             index++;
@@ -82,7 +88,7 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
     public void decrementIndex(){
         if(index == 0){
             index = 2;
-            pointer.transform.localPosition = optionsPos;
+            pointer.transform.localPosition = quitPos;
         }
         else if(index == 1){
             index--;
