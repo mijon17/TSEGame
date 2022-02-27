@@ -19,6 +19,8 @@ public class GameSettings : ScriptableObject
         //volSlider.value = PlayerPrefs.GetFloat("MusicVolume", 0.75f)
     }
 
+ 
+
 
 
 }
