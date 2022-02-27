@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour//also make script for using buttons to cl
     void Update()
     {
         //if input enter
-        if(Input.GetKeyDown(KeyCode.KeypadEnter)){
+        if(Input.GetKeyDown(KeyCode.E)){
             if(index == 0){
                 newGame();
             }

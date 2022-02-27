@@ -18,9 +18,19 @@ public class buttonMouseHandler : MonoBehaviour
     }
 
     //changes UIManager index and pointer position to highlighted button
-    private void OnMouseOver()
+    public void onHover()
     {
+        Debug.Log(this.name);
         manager.index = buttonIndex;
-        pointer.transform.position = dotPosition;
+        pointer.transform.localPosition = dotPosition;
+    }
+    public void newGame(){
+        manager.newGame();
+    }
+    public void loadGame(){
+        manager.LoadGame();
+    }
+    public void options(){
+        manager.openOptions();
     }
 }
