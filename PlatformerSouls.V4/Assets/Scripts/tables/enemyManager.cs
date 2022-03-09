@@ -8,7 +8,7 @@ public class enemyManager : MonoBehaviour
     public int ID;
     public GameObject enemyType;
     public Vector3 spawnPos;
-    public Vector3 spawnRot;
+    public Quaternion spawnRot;
     public bool alive;
 
      
