@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class interactable : MonoBehaviour, Iinteract
 {
-    //public playerStats stats;
-    //public interactionMechanic interactRef;
+    public PlayerController controller;
+    public interactionMechanic interactRef;
     public Material glowMaterial;
     private Color shaderTrans;
     // Start is called before the first frame update
@@ -29,8 +29,8 @@ public class interactable : MonoBehaviour, Iinteract
     {
         if(other.tag == "Player")
         {
-            //stats.canInteract = true;
-            //interactRef.toInteract = this;
+            controller.canInteract = true;
+            interactRef.toInteract = this;
             shaderTrans.a = 255;
             glowMaterial.color = shaderTrans;
             

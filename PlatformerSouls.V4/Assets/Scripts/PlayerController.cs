@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
+    public bool canInteract;
 
     public void Start()
     {
