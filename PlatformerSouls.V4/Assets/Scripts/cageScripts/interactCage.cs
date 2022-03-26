@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class interactCage : MonoBehaviour, Iinteract
 {
-    // Start is called before the first frame update
+    public Free_Slay cageChoice;
     void Start()
     {
         
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void interact(){
         //highlight text
         //use the free slay script depending on input
+        //input will be done by a dialogue box which is enabled upon interaction and disabled upon finishing interactions
     }
 }
