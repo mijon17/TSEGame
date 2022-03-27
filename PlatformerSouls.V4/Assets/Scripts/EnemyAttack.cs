@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
 	public int attackDamage = 20;
+	//public int secondAttack = 40;
 	
 
 	public Vector3 attackOffset;
@@ -24,6 +25,20 @@ public class EnemyAttack : MonoBehaviour
 			colInfo.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
 		}
 	}
+
+	//public void SecondPhase()
+ //   {
+	//	Vector3 pos = transform.position;
+	//	pos += transform.right * attackOffset.x;
+	//	pos += transform.up * attackOffset.y;
+
+	//	Collider2D colInfo = Physics2D.OverlapCircle(pos, attackRange, attackMask);
+	//	if (colInfo != null)
+	//	{
+	//		colInfo.GetComponent<PlayerHealth>().TakeDamage(secondAttack);
+	//	}
+
+	//}
 
 	
 	
