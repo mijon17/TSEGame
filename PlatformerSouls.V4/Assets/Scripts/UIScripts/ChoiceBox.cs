@@ -9,10 +9,14 @@ public class ChoiceBox : dialogueBoxScript
     public Text choice2;
     public GameObject pointer;
     public int index = 0;
+    public talk talkScript;
+
+    public Vector3 choice1Location;
+    public Vector3 choice2Location;
 
     void Start()
     {
-        
+        //pointer at choice location 1
     }
 
     // Update is called once per frame
@@ -22,12 +26,36 @@ public class ChoiceBox : dialogueBoxScript
         {
             if (index == 0)
             {
-
+                choice0Func();
             }
             else if (index == 1)
             {
-
+                choice1Func();
             }
         }
+        if (Input.GetKeyDown(KeyCode.LeftArrow) && index == 0) {
+            index = 1;
+            //change pointer location
+        }
+        else if (Input.GetKeyDown(KeyCode.LeftArrow) && index == 1) {
+            index = 0;
+            //change pointer location
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && index == 0) {
+            index = 1;
+            //change pointer location
+        }
+        else if (Input.GetKeyDown(KeyCode.RightArrow) && index == 1) {
+            index = 0;
+            //change pointer location
+        }
+    }
+
+    public void choice0Func() {
+        talkScript.makingChoice = false;
+    }
+
+    public void choice1Func(){
+        talkScript.makingChoice = false;
     }
 }
