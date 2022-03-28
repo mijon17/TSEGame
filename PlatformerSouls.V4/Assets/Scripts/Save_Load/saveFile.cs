@@ -9,7 +9,6 @@ public class saveFile
     public Quaternion playerRot;
     //player inventory
     public int playerHealth;
-    public int playerMana;
 
     //enemyManager
 
@@ -19,7 +18,6 @@ public class saveFile
         playerPos = save.playerPos;
         playerRot = save.playerRot;
         playerHealth = save.playerHealth;
-        playerMana = save.playerMana;
     }
 
 }
