@@ -8,6 +8,7 @@ public class interactCage : interactable, Iinteract
     public GameObject choiceCanvas;
     public GameObject player;
     public ChoiceBox choiceDialogueRef;
+    public Rigidbody2D playerRigid;
 
     // Update is called once per frame
 
@@ -16,8 +17,9 @@ public class interactCage : interactable, Iinteract
         if(data.isEmpty == false && choiceCanvas.activeSelf == false){
             Debug.Log("interacting");
             choiceCanvas.SetActive(true);
-            controller.canMove = false;
-            choiceDialogueRef.makingChoices = true;
+            playerRigid = player.GetComponent<Rigidbody2D>();
+            playerRigid.constraints = RigidbodyConstraints2D.FreezeAll;
+            
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

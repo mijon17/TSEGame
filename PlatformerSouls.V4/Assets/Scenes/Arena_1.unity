@@ -445,7 +445,8 @@ MonoBehaviour:
   data: {fileID: 32603869}
   choiceCanvas: {fileID: 883258630}
   player: {fileID: 801700609}
-  choiceDialogueRef: {fileID: 0}
+  choiceDialogueRef: {fileID: 883258634}
+  playerRigid: {fileID: 801700620}
 --- !u!1 &118104218
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1081326232671442487, guid: 1fd4714db437feb448936e3eea0df1a5, type: 3}
       propertyPath: MovementSpeed
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3683688969911073236, guid: 1fd4714db437feb448936e3eea0df1a5, type: 3}
       propertyPath: m_Name
@@ -600,6 +601,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7548189147831364296, guid: 1fd4714db437feb448936e3eea0df1a5, type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1327320576}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fd4714db437feb448936e3eea0df1a5, type: 3}
 --- !u!1001 &149466868
@@ -1338,6 +1343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 661d0e30e74958b408982a4cb7a74792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &801700620 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 3683688969911073263, guid: 1fd4714db437feb448936e3eea0df1a5, type: 3}
+  m_PrefabInstance: {fileID: 141596509}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &808498265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1765,7 +1775,8 @@ MonoBehaviour:
   pointer: {fileID: 1258225289}
   playerController: {fileID: 801700616}
   choices: {fileID: 32603868}
-  makingChoices: 0
+  player: {fileID: 801700609}
+  playerRigid: {fileID: 801700620}
   index: 0
   choice1Location: {x: -122.41, y: -14, z: 0}
   choice2Location: {x: -16.57, y: -14, z: 0}
