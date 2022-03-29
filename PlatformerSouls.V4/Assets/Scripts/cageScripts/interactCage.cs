@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class interactCage : MonoBehaviour, Iinteract
 {
-    public Free_Slay cageChoice;
+    public cageData data;
+    public GameObject choiceCanvas;
     void Start()
     {
         
@@ -13,8 +14,9 @@ public class interactCage : MonoBehaviour, Iinteract
     // Update is called once per frame
 
     public void interact(){
-        //highlight text
-        //use the free slay script depending on input
-        //input will be done by a dialogue box which is enabled upon interaction and disabled upon finishing interactions
+        Debug.Log("interacting");
+        if(!data.isEmpty && choiceCanvas.activeSelf == false){
+            choiceCanvas.SetActive(true);
+        }
     }
 }
