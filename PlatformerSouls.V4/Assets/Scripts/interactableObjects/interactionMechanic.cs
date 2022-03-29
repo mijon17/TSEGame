@@ -29,7 +29,9 @@ public class interactionMechanic : MonoBehaviour
         {
             if (toInteract != null)
             {
-                toInteract.interact();
+                if(toInteract.gameObject.GetComponent<Iinteract>() != null){
+                    toInteract.gameObject.GetComponent<Iinteract>().interact();
+                }
             }
         }
     }

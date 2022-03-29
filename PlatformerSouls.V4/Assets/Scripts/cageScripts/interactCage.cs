@@ -2,19 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class interactCage : MonoBehaviour, Iinteract
+public class interactCage : interactable, Iinteract
 {
-    public Free_Slay cageChoice;
-    void Start()
-    {
-        
-    }
+    public cageData data;
+    public GameObject choiceCanvas;
+
 
     // Update is called once per frame
 
-    public void interact(){
-        //highlight text
-        //use the free slay script depending on input
-        //input will be done by a dialogue box which is enabled upon interaction and disabled upon finishing interactions
+    public virtual void interact(){
+        Debug.Log("interacting");
+        if(data.isEmpty == false && choiceCanvas.activeSelf == false){
+            Debug.Log("interacting");
+            choiceCanvas.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(choiceCanvas.activeSelf == true){
+            choiceCanvas.SetActive(false);
+        }
     }
 }

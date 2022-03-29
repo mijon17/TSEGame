@@ -18,8 +18,9 @@ GameObject:
   - component: {fileID: 7548189147831364279}
   - component: {fileID: 7548189147831364288}
   - component: {fileID: 7548189147831364296}
+  - component: {fileID: -1081326232671442487}
   m_Layer: 3
-  m_Name: Player_Knight 1
+  m_Name: Player_Knight
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,6 +157,7 @@ MonoBehaviour:
   MovementSpeed: 7
   JumpForce: 9
   animator: {fileID: 2838508703590646474}
+  canInteract: 0
 --- !u!95 &2838508703590646474
 Animator:
   serializedVersion: 3
@@ -323,6 +325,22 @@ MonoBehaviour:
   animator: {fileID: 2838508703590646474}
   maxHealth: 200
   healthBar: {fileID: 0}
+--- !u!114 &-1081326232671442487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3683688969911073236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 661d0e30e74958b408982a4cb7a74792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MovementSpeed: 1
+  JumpForce: 1
+  animator: {fileID: 0}
+  canInteract: 0
 --- !u!1 &3751106816457150044
 GameObject:
   m_ObjectHideFlags: 0

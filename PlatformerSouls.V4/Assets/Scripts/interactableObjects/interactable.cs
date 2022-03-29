@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class interactable : MonoBehaviour, Iinteract
+public class interactable : MonoBehaviour
 {
     public PlayerController controller;
     public interactionMechanic interactRef;
@@ -29,6 +29,7 @@ public class interactable : MonoBehaviour, Iinteract
     {
         if(other.tag == "Player")
         {
+            Debug.Log("Entering collision");
             controller.canInteract = true;
             interactRef.toInteract = this;
             shaderTrans.a = 255;
@@ -40,14 +41,10 @@ public class interactable : MonoBehaviour, Iinteract
     {
         if(collision.tag == "Player")
         {
-            //stats.canInteract = false;
-            //interactRef.toInteract = null;
+            controller.canInteract = false;
+            interactRef.toInteract = null;
             shaderTrans.a = 0;
             glowMaterial.color = shaderTrans;
         }
-    }
-    public virtual void interact()
-    {
-        Debug.Log("interacting");
     }
 }

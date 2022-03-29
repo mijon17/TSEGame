@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class cageData
+public class cageData : MonoBehaviour
 {
     public bool isEmpty;
 
