@@ -6,7 +6,8 @@ public class interactCage : interactable, Iinteract
 {
     public cageData data;
     public GameObject choiceCanvas;
-
+    public GameObject player;
+    public ChoiceBox choiceDialogueRef;
 
     // Update is called once per frame
 
@@ -15,6 +16,8 @@ public class interactCage : interactable, Iinteract
         if(data.isEmpty == false && choiceCanvas.activeSelf == false){
             Debug.Log("interacting");
             choiceCanvas.SetActive(true);
+            controller.canMove = false;
+            choiceDialogueRef.makingChoices = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

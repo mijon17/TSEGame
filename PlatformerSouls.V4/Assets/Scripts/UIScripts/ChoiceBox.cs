@@ -7,7 +7,9 @@ public class ChoiceBox : MonoBehaviour
 {
 
     public GameObject pointer;
+    public PlayerController playerController;
     public Free_Slay choices;
+    public bool makingChoices;
     public int index = 0;
 
 
@@ -17,52 +19,57 @@ public class ChoiceBox : MonoBehaviour
     void Start()
     {
         //pointer at choice location 1
+        makingChoices = true;
         pointer.transform.localPosition = choice1Location;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            if (index == 0)
+        if(makingChoices){
+            if (Input.GetKeyDown(KeyCode.E))
             {
-                choice0Func();
+                if (index == 0)
+                {
+                    choice0Func();
+                }
+                else if (index == 1)
+                {
+                    choice1Func();
+                }
             }
-            else if (index == 1)
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && index == 0)
             {
-                choice1Func();
+                index = 1;
+                pointer.transform.localPosition = choice2Location;
             }
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && index == 0)
-        {
-            index = 1;
-            //change pointer location
-        }
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && index == 1)
-        {
-            index = 0;
-            //change pointer location
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && index == 0)
-        {
-            index = 1;
-            //change pointer location
-        }
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && index == 1)
-        {
-            index = 0;
-            //change pointer location
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) && index == 1)
+            {
+                index = 0;
+                pointer.transform.localPosition = choice1Location;
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow) && index == 0)
+            {
+                index = 1;
+                pointer.transform.localPosition = choice2Location;
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow) && index == 1)
+            {
+                index = 0;
+                pointer.transform.localPosition = choice1Location;
+            }
         }
     }
 
     public void choice0Func()
     {
+        playerController.canMove = true;
         choices.free();
     }
 
     public void choice1Func()
     {
+        playerController.canMove = true;
         choices.slay();
     }
 }

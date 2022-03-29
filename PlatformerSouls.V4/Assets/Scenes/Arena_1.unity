@@ -439,8 +439,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48ac2181b1dda8943b2ff2b77e062396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 801700616}
+  interactRef: {fileID: 801700610}
+  glowMaterial: {fileID: 0}
   data: {fileID: 32603869}
   choiceCanvas: {fileID: 883258630}
+  player: {fileID: 801700609}
+  choiceDialogueRef: {fileID: 0}
 --- !u!1 &118104218
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,6 +537,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -1081326232671442487, guid: 1fd4714db437feb448936e3eea0df1a5, type: 3}
+      propertyPath: canMove
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1081326232671442487, guid: 1fd4714db437feb448936e3eea0df1a5, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 801700615}
@@ -541,7 +550,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -1081326232671442487, guid: 1fd4714db437feb448936e3eea0df1a5, type: 3}
       propertyPath: MovementSpeed
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3683688969911073236, guid: 1fd4714db437feb448936e3eea0df1a5, type: 3}
       propertyPath: m_Name
@@ -1754,7 +1763,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointer: {fileID: 1258225289}
-  choices: {fileID: 0}
+  playerController: {fileID: 801700616}
+  choices: {fileID: 32603868}
+  makingChoices: 0
   index: 0
   choice1Location: {x: -122.41, y: -14, z: 0}
   choice2Location: {x: -16.57, y: -14, z: 0}
