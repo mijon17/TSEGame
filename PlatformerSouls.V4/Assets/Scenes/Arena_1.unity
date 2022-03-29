@@ -247,6 +247,8 @@ GameObject:
   - component: {fileID: 32603867}
   - component: {fileID: 32603866}
   - component: {fileID: 32603868}
+  - component: {fileID: 32603869}
+  - component: {fileID: 32603870}
   m_Layer: 0
   m_Name: pixelSteelCage
   m_TagString: Untagged
@@ -399,10 +401,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205163e0947bb764bb689d615904c997, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cageData: {fileID: 0}
   player: {fileID: 801700609}
   health: {fileID: 801700611}
   playerCom: {fileID: 801700612}
   playerController: {fileID: 801700616}
+--- !u!114 &32603869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32603862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2f0d9815a73c0c47826e51884cf2389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEmpty: 0
+  healthBuff: 0
+  attackRateBuff: 0
+  damageBuff: 0
+  manaBuff: 0
+  speedBuff: 0
+  NPC: {fileID: 0}
+  npcLocation: {x: 0, y: 0, z: 0}
+  npcRotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &32603870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32603862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48ac2181b1dda8943b2ff2b77e062396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: {fileID: 32603869}
+  choiceCanvas: {fileID: 883258630}
 --- !u!1 &118104218
 GameObject:
   m_ObjectHideFlags: 0

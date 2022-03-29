@@ -14,8 +14,8 @@ public class interactCage : MonoBehaviour, Iinteract
     // Update is called once per frame
 
     public void interact(){
-        Debug.Log("interacting");
-        if(!data.isEmpty && choiceCanvas.activeSelf == false){
+        if(data.isEmpty == false && choiceCanvas.activeSelf == false){
+            Debug.Log("interacting");
             choiceCanvas.SetActive(true);
         }
     }

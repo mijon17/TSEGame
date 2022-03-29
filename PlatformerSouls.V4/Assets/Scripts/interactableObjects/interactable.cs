@@ -41,8 +41,8 @@ public class interactable : MonoBehaviour, Iinteract
     {
         if(collision.tag == "Player")
         {
-            //stats.canInteract = false;
-            //interactRef.toInteract = null;
+            controller.canInteract = false;
+            interactRef.toInteract = null;
             shaderTrans.a = 0;
             glowMaterial.color = shaderTrans;
         }
