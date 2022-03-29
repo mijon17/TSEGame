@@ -68,7 +68,7 @@ public class ChoiceBox : MonoBehaviour
 
     public void choice1Func()
     {
-        playerRigid.constraints = RigidbodyConstraints2D.None;
+        playerRigid.constraints = RigidbodyConstraints2D.None;//should be rotation
         choices.slay();
     }
 }
