@@ -17,4 +17,10 @@ public class interactCage : interactable, Iinteract
             choiceCanvas.SetActive(true);
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(choiceCanvas.activeSelf == true){
+            choiceCanvas.SetActive(false);
+        }
+    }
 }

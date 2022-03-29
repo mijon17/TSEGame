@@ -17,6 +17,7 @@ public class ChoiceBox : MonoBehaviour
     void Start()
     {
         //pointer at choice location 1
+        pointer.transform.localPosition = choice1Location;
     }
 
     // Update is called once per frame
