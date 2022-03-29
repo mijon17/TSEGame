@@ -29,6 +29,7 @@ public class interactable : MonoBehaviour, Iinteract
     {
         if(other.tag == "Player")
         {
+            Debug.Log("Entering collision");
             controller.canInteract = true;
             interactRef.toInteract = this;
             shaderTrans.a = 255;
