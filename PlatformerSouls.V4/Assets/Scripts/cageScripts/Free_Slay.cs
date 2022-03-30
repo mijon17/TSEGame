@@ -17,6 +17,7 @@ public class Free_Slay : MonoBehaviour
 
     public void free(){
         cageData.isEmpty = true;
+
         //trigger particle effect
         //save
         //instantiate NPC
@@ -24,9 +25,9 @@ public class Free_Slay : MonoBehaviour
 
     public void slay(){
         cageData.isEmpty = true;
+        player.AddComponent<drainBuff>();
         //trigger particle effect
         //save
-        //attach buff;
         
     }
 

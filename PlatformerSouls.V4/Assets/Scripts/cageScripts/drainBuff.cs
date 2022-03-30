@@ -43,7 +43,10 @@ public class drainBuff : MonoBehaviour
             health.currentHealth = health.maxHealth;
         }
         health.maxHealth = defaultMaxHealth;
+        health.healthBar.SetHealth(health.currentHealth);
+        Destroy(this);
         //alter healthBar;
+
         
         
     }

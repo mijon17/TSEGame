@@ -7,10 +7,7 @@ public class ChoiceBox : MonoBehaviour
 {
 
     public GameObject pointer;
-    public PlayerController playerController;
     public Free_Slay choices;
-    public GameObject player;
-    public Rigidbody2D playerRigid;
     public int index = 0;
 
 
@@ -20,7 +17,6 @@ public class ChoiceBox : MonoBehaviour
     void Start()
     {
         //pointer at choice location 1
-        playerRigid = player.GetComponent<Rigidbody2D>();
         pointer.transform.localPosition = choice1Location;
     }
 
@@ -62,13 +58,11 @@ public class ChoiceBox : MonoBehaviour
 
     public void choice0Func()
     {
-        playerRigid.constraints = RigidbodyConstraints2D.None;
         choices.free();
     }
 
     public void choice1Func()
     {
-        playerRigid.constraints = RigidbodyConstraints2D.None;//should be rotation
         choices.slay();
     }
 }
