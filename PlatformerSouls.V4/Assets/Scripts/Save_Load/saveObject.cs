@@ -6,6 +6,8 @@ using UnityEngine;
 
 public static class saveObject
 {
+   //creates save file by serialising data into said file
+    //https://weeklyhow.com/how-to-save-load-game-in-unity/
     public static void save(saveFile save){
         BinaryFormatter formatter = new BinaryFormatter();
         string path = Application.persistentDataPath + "/playerSave.sve";

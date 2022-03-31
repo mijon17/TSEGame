@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// this script is attached to the player character
+/// upon using the 'slay' option at the cage.
+/// </summary>
 public class drainBuff : MonoBehaviour
 {
     public PlayerController playerController;
@@ -10,6 +14,7 @@ public class drainBuff : MonoBehaviour
 
     public cageData cage;
 
+    //reference points for when the buff is destroyed and values need reverting
     public int defaultDamage;
     public float defaultAttackRate;
     public float defaultHealth;
@@ -26,6 +31,7 @@ public class drainBuff : MonoBehaviour
     }
 
     public void buff(){
+        //alter the values as you please
         playerController.MovementSpeed = playerController.MovementSpeed * cage.speedBuff;
         combat.attackDamage = combat.attackDamage * cage.damageBuff;
         combat.attackRate = combat.attackRate * cage.attackRateBuff;
@@ -35,6 +41,7 @@ public class drainBuff : MonoBehaviour
     }
 
     public void destroyBuff(){
+    //reverts the values of the buff
         playerController.MovementSpeed = defaultMovement;
         combat.attackDamage = defaultDamage;
         combat.attackRate = defaultAttackRate;
@@ -43,7 +50,10 @@ public class drainBuff : MonoBehaviour
             health.currentHealth = health.maxHealth;
         }
         health.maxHealth = defaultMaxHealth;
+        health.healthBar.SetHealth(health.currentHealth);
+        Destroy(this);
         //alter healthBar;
+
         
         
     }

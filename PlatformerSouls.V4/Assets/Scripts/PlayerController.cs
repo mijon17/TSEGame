@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public float MovementSpeed = 1f;
     public float JumpForce = 1f;
     bool facingRight = true;
+    public bool canMove;
+
 
     private Rigidbody2D _rigidbody;
 
@@ -48,7 +50,6 @@ public class PlayerController : MonoBehaviour
         }
 
     }
-
     void flip()
     {
         facingRight = !facingRight;
