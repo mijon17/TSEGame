@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// opens a dialogue box when interacting with the cage
+/// only does this when the cage is empty and the dialogue box is not open
+/// </summary>
 public class interactCage : interactable, Iinteract
 {
     public cageData data;
     public GameObject choiceCanvas;
     public GameObject player;
     public ChoiceBox choiceDialogueRef;
-    public Rigidbody2D playerRigid;
 
     // Update is called once per frame
 
@@ -17,8 +20,6 @@ public class interactCage : interactable, Iinteract
         if(data.isEmpty == false && choiceCanvas.activeSelf == false){
             Debug.Log("interacting");
             choiceCanvas.SetActive(true);
-            playerRigid = player.GetComponent<Rigidbody2D>();
-            playerRigid.constraints = RigidbodyConstraints2D.FreezeAll;
             
         }
     }

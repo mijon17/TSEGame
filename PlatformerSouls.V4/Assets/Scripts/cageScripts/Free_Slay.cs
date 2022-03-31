@@ -19,8 +19,8 @@ public class Free_Slay : MonoBehaviour
         cageData.isEmpty = true;
 
         //trigger particle effect
+        //move NPC to new location
         //save
-        //instantiate NPC
     }
 
     public void slay(){
